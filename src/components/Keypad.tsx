@@ -61,10 +61,10 @@ export const Keypad: React.FC<KeypadProps> = ({
   buttonToneClass = 'bg-[#343537] hover:bg-[#3F4043] text-white border-[#48494C]',
 }) => {
   const sciBtnBase =
-    `calc-key w-full h-[36px] sm:h-[40px] rounded-[7px] border-t border-white/10 shadow-[0_2px_0_rgba(0,0,0,0.45)] flex items-center justify-center font-medium text-[15px] sm:text-[16px] cursor-pointer ${buttonToneClass}`;
+    `calc-key w-full h-[36px] sm:h-[40px] rounded-[7px] border-t border-white/10 shadow-[0_2px_0_rgba(0,0,0,0.45)] active:shadow-[0_1px_0_rgba(0,0,0,0.4)] flex items-center justify-center font-medium text-[15px] sm:text-[16px] cursor-pointer ${buttonToneClass}`;
 
   const numBtnBase =
-    'calc-key w-full h-[44px] sm:h-[48px] rounded-[8px] border-t border-white/10 shadow-[0_2px_0_rgba(0,0,0,0.5)] bg-[#353638] hover:bg-[#414245] text-white flex items-center justify-center font-medium text-[22px] sm:text-[24px] cursor-pointer font-calc-mono';
+    'calc-key w-full h-[44px] sm:h-[48px] rounded-[8px] border-t border-white/10 shadow-[0_2px_0_rgba(0,0,0,0.5)] active:shadow-[0_1px_0_rgba(0,0,0,0.45)] bg-[#353638] hover:bg-[#414245] text-white flex items-center justify-center font-medium text-[22px] sm:text-[24px] cursor-pointer font-calc-mono';
 
   return (
     <div className="flex flex-col gap-[5px] sm:gap-[6px] px-1.5 sm:px-2 pb-2 select-none">
@@ -75,7 +75,7 @@ export const Keypad: React.FC<KeypadProps> = ({
           <button
             type="button"
             onClick={() => onKeyPress('SHIFT')}
-            className={`calc-key w-full h-[34px] sm:h-[38px] rounded-[7px] bg-[#FFC928] hover:bg-[#FFD34D] text-[#141517] font-bold text-[13px] sm:text-[14px] tracking-wide shadow-[0_2px_0_rgba(0,0,0,0.45)] cursor-pointer flex items-center justify-center ${
+            className={`calc-key w-full h-[34px] sm:h-[38px] rounded-[7px] bg-[#FFC928] hover:bg-[#FFD34D] text-[#141517] font-bold text-[13px] sm:text-[14px] tracking-wide shadow-[0_2px_0_rgba(0,0,0,0.45)] active:shadow-[0_1px_0_rgba(0,0,0,0.4)] cursor-pointer flex items-center justify-center ${
               shift === 'SHIFT' ? 'ring-2 ring-white' : ''
             }`}
           >
@@ -88,7 +88,7 @@ export const Keypad: React.FC<KeypadProps> = ({
           <button
             type="button"
             onClick={() => onKeyPress('ALPHA')}
-            className={`calc-key w-full h-[34px] sm:h-[38px] rounded-[7px] bg-[#967CE3] hover:bg-[#A68FEF] text-white font-semibold text-[13px] sm:text-[14px] tracking-wide shadow-[0_2px_0_rgba(0,0,0,0.45)] cursor-pointer flex items-center justify-center ${
+            className={`calc-key w-full h-[34px] sm:h-[38px] rounded-[7px] bg-[#967CE3] hover:bg-[#A68FEF] text-white font-semibold text-[13px] sm:text-[14px] tracking-wide shadow-[0_2px_0_rgba(0,0,0,0.45)] active:shadow-[0_1px_0_rgba(0,0,0,0.4)] cursor-pointer flex items-center justify-center ${
               shift === 'ALPHA' ? 'ring-2 ring-white' : ''
             }`}
           >
@@ -114,7 +114,7 @@ export const Keypad: React.FC<KeypadProps> = ({
               type="button"
               aria-label="Up"
               onClick={() => onKeyPress('UP')}
-              className="calc-key absolute top-0 left-1/2 -translate-x-1/2 w-[54%] h-[36%] flex items-start justify-center pt-1.5 text-[#D1D3D6] hover:text-white cursor-pointer"
+              className="calc-dpad-btn absolute top-0 left-1/2 -translate-x-1/2 w-[54%] h-[36%] flex items-start justify-center pt-1.5 text-[#D1D3D6] hover:text-white cursor-pointer"
             >
               <span className="text-[11px] leading-none">▲</span>
             </button>
@@ -124,7 +124,7 @@ export const Keypad: React.FC<KeypadProps> = ({
               type="button"
               aria-label="Down"
               onClick={() => onKeyPress('DOWN')}
-              className="calc-key absolute bottom-0 left-1/2 -translate-x-1/2 w-[54%] h-[36%] flex items-end justify-center pb-1.5 text-[#D1D3D6] hover:text-white cursor-pointer"
+              className="calc-dpad-btn absolute bottom-0 left-1/2 -translate-x-1/2 w-[54%] h-[36%] flex items-end justify-center pb-1.5 text-[#D1D3D6] hover:text-white cursor-pointer"
             >
               <span className="text-[11px] leading-none">▼</span>
             </button>
@@ -134,7 +134,7 @@ export const Keypad: React.FC<KeypadProps> = ({
               type="button"
               aria-label="Left"
               onClick={() => onKeyPress('LEFT')}
-              className="calc-key absolute left-0 top-1/2 -translate-y-1/2 w-[36%] h-[68%] flex items-center justify-start pl-2.5 text-[#D1D3D6] hover:text-white cursor-pointer"
+              className="calc-dpad-btn absolute left-0 top-1/2 -translate-y-1/2 w-[36%] h-[68%] flex items-center justify-start pl-2.5 text-[#D1D3D6] hover:text-white cursor-pointer"
             >
               <span className="text-[11px] leading-none">◄</span>
             </button>
@@ -144,7 +144,7 @@ export const Keypad: React.FC<KeypadProps> = ({
               type="button"
               aria-label="Right"
               onClick={() => onKeyPress('RIGHT')}
-              className="calc-key absolute right-0 top-1/2 -translate-y-1/2 w-[36%] h-[68%] flex items-center justify-end pr-2.5 text-[#D1D3D6] hover:text-white cursor-pointer"
+              className="calc-dpad-btn absolute right-0 top-1/2 -translate-y-1/2 w-[36%] h-[68%] flex items-center justify-end pr-2.5 text-[#D1D3D6] hover:text-white cursor-pointer"
             >
               <span className="text-[11px] leading-none">►</span>
             </button>
@@ -154,7 +154,7 @@ export const Keypad: React.FC<KeypadProps> = ({
               type="button"
               aria-label="Evaluate or Select"
               onClick={() => onKeyPress('CENTER')}
-              className="calc-key absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[22px] h-[22px] rounded-full bg-[#151618] hover:bg-[#232529] border border-white/15 shadow-inner cursor-pointer"
+              className="calc-dpad-btn absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[22px] h-[22px] rounded-full bg-[#151618] hover:bg-[#232529] border border-white/15 shadow-inner cursor-pointer"
             />
           </div>
         </div>
