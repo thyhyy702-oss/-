@@ -1,0 +1,6 @@
+{
+  "name": "CalcES Scientific Calculator",
+  "description": "Full-featured scientific calculator with natural textbook math display, calculus, complex numbers, matrices, vectors, statistics, equation solver, unit converter, and physical constants.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
